@@ -141,13 +141,8 @@ a {
 .art {
   margin-top: 18px;
   min-height: 250px;
-  border: 1px dashed #b7bdc3;
-  border-radius: 14px;
-  background: linear-gradient(135deg, #fcfcfc, #eceff2);
   display: grid;
   place-items: center;
-  font-weight: 700;
-  color: #6f757b;
 }
 
 .product-image {
