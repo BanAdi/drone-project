@@ -150,6 +150,13 @@ a {
   color: #6f757b;
 }
 
+.product-image {
+  max-width: 100%;
+  max-height: 340px;
+  object-fit: contain;
+  display: block;
+}
+
 .dimensions {
   border-left: 3px solid var(--orange);
   padding-left: 14px;
