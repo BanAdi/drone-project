@@ -279,6 +279,7 @@ footer .container {
 }
 
 @media (max-width: 920px) {
+
   .hero,
   .stats-grid {
     grid-template-columns: 1fr;
