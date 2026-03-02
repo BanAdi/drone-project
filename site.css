@@ -275,6 +275,12 @@ a {
   opacity: 1;
 }
 
+.shyena-page .page-bg-image {
+  object-fit: contain;
+  object-position: center;
+  background: #041425;
+}
+
 .product-page .site-header,
 .product-page .product,
 .product-page footer {
