@@ -91,12 +91,17 @@
 
     <script>
       (function () {
+        const page = document.body;
         const media = document.getElementById("agenya-bg-media");
         const video = document.getElementById("agenya-hero-video");
-        if (!media || !video) return;
+        if (!media || !video) {
+          page.classList.add("media-finished");
+          return;
+        }
 
         function showStill() {
           media.classList.add("is-finished");
+          page.classList.add("media-finished");
         }
 
         video.addEventListener("ended", showStill, { once: true });

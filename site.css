@@ -218,6 +218,23 @@ a {
   padding: 0;
 }
 
+.product-page .hero-caption,
+.product-page .scroll-indicator {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s ease;
+  pointer-events: none;
+}
+
+.product-page.media-finished .hero-caption,
+.product-page.media-finished .scroll-indicator {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
 .product-page {
   position: relative;
 }

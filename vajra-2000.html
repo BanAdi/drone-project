@@ -92,12 +92,17 @@
 
     <script>
       (function () {
+        const page = document.body;
         const media = document.getElementById("vajra-bg-media");
         const video = document.getElementById("vajra-hero-video");
-        if (!media || !video) return;
+        if (!media || !video) {
+          page.classList.add("media-finished");
+          return;
+        }
 
         function showStill() {
           media.classList.add("is-finished");
+          page.classList.add("media-finished");
         }
 
         video.addEventListener("ended", showStill, { once: true });
