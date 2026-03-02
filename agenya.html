@@ -6,7 +6,26 @@
     <title>Agenya</title>
     <link rel="stylesheet" href="site.css?v=3" />
   </head>
-  <body>
+  <body class="product-page">
+    <div class="page-bg-media" id="agenya-bg-media">
+      <video
+        class="page-bg-video"
+        id="agenya-hero-video"
+        autoplay
+        muted
+        playsinline
+        preload="metadata"
+        poster="media/agenya.png"
+      >
+        <source src="media/agenya.mp4" type="video/mp4" />
+      </video>
+      <img
+        class="page-bg-image"
+        src="media/agenya.png"
+        alt="Agenya background visual"
+      />
+      <div class="page-bg-overlay"></div>
+    </div>
     <header class="site-header">
       <div class="container nav">
         <a class="brand" href="index.html">Astraeus Dynamics</a>
@@ -19,8 +38,8 @@
     </header>
 
     <main class="container product">
-      <section class="hero hero-wide">
-        <div class="title">
+      <section class="hero hero-minimal">
+        <div class="hero-caption">
           <p class="kicker">Product B</p>
           <h1>Strike Drone Agenya</h1>
           <div class="subtitle">Medium strike platform with long-range variants</div>
@@ -29,15 +48,10 @@
             <div class="feature-chip">Thermobaric</div>
           </div>
         </div>
-
-        <div class="dimensions summary-panel">
-          <h3>TECHNICAL SPECIFICATIONS</h3>
-          <p>Payload weight up to 40 kg</p>
-          <p>Max speed up to 200 km/h</p>
-        </div>
+        <a class="scroll-indicator" href="#agenya-specs">Scroll for specifications</a>
       </section>
 
-      <section class="stats-grid single-grid">
+      <section class="stats-grid single-grid" id="agenya-specs">
         <div class="metrics">
           <div class="metric"><div class="icon">P</div><div class="metric-text"><span>PAYLOAD</span>40 KG</div></div>
           <div class="metric"><div class="icon">R</div><div class="metric-text"><span>TACTICAL RANGE</span>700-1100 KM</div></div>
@@ -69,5 +83,25 @@
     <footer>
       <div class="container">© 2026 Astraeus Dynamics</div>
     </footer>
+
+    <script>
+      (function () {
+        const media = document.getElementById("agenya-bg-media");
+        const video = document.getElementById("agenya-hero-video");
+        if (!media || !video) return;
+
+        function showStill() {
+          media.classList.add("is-finished");
+        }
+
+        video.addEventListener("ended", showStill, { once: true });
+        video.addEventListener("error", showStill, { once: true });
+
+        const playAttempt = video.play();
+        if (playAttempt && typeof playAttempt.catch === "function") {
+          playAttempt.catch(showStill);
+        }
+      })();
+    </script>
   </body>
 </html>
