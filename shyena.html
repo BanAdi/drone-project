@@ -4,9 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shyena</title>
+    <meta
+      name="description"
+      content="Shyena is an interceptor platform in the Astraeus Dynamics catalog focused on autonomous terminal guidance, thermal operation, and multi-UAV control."
+    />
+    <meta name="theme-color" content="#051627" />
     <link rel="stylesheet" href="site.css?v=3" />
   </head>
-  <body>
+  <body class="product-page">
+    <div class="page-bg-media" id="shyena-bg-media">
+      <video
+        class="page-bg-video"
+        id="shyena-hero-video"
+        autoplay
+        muted
+        playsinline
+        preload="metadata"
+        poster="media/sheyna.png"
+      >
+        <source src="media/sheyna.mp4" type="video/mp4" />
+      </video>
+      <img
+        class="page-bg-image"
+        src="media/sheyna.png"
+        alt="Shyena background visual"
+      />
+      <div class="page-bg-overlay"></div>
+    </div>
     <header class="site-header">
       <div class="container nav">
         <a class="brand" href="index.html">Astraeus Dynamics</a>
@@ -19,8 +43,8 @@
     </header>
 
     <main class="container product">
-      <section class="hero hero-wide">
-        <div class="title">
+      <section class="hero hero-minimal">
+        <div class="hero-caption">
           <p class="kicker">Product C</p>
           <h1>Interceptor Shyena</h1>
           <div class="subtitle">Interceptor platform for autonomous terminal guidance</div>
@@ -32,15 +56,10 @@
           </div>
         </div>
 
-        <div class="dimensions summary-panel">
-          <h3>MISSION PROFILE</h3>
-          <p>Control range up to 40 km</p>
-          <p>Endurance up to 1 hour</p>
-          <p>Maximum speed 300 km/h</p>
-        </div>
+        <a class="scroll-indicator" href="#shyena-specs">Scroll for specifications</a>
       </section>
 
-      <section class="stats-grid single-grid">
+      <section class="stats-grid single-grid" id="shyena-specs">
         <div class="metrics">
           <div class="metric"><div class="icon">R</div><div class="metric-text"><span>CONTROL RANGE</span>40 KM</div></div>
           <div class="metric"><div class="icon">E</div><div class="metric-text"><span>ENDURANCE</span>1 HOUR</div></div>
@@ -72,5 +91,25 @@
     <footer>
       <div class="container">© 2026 Astraeus Dynamics</div>
     </footer>
+
+    <script>
+      (function () {
+        const media = document.getElementById("shyena-bg-media");
+        const video = document.getElementById("shyena-hero-video");
+        if (!media || !video) return;
+
+        function showStill() {
+          media.classList.add("is-finished");
+        }
+
+        video.addEventListener("ended", showStill, { once: true });
+        video.addEventListener("error", showStill, { once: true });
+
+        const playAttempt = video.play();
+        if (playAttempt && typeof playAttempt.catch === "function") {
+          playAttempt.catch(showStill);
+        }
+      })();
+    </script>
   </body>
 </html>

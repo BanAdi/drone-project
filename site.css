@@ -1031,6 +1031,71 @@ footer .container {
   line-height: 1.45;
 }
 
+.inquiry-strip {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  gap: 24px;
+  margin: 10px 0 54px;
+  padding-top: 12px;
+}
+
+.inquiry-copy h2 {
+  margin: 0 0 12px;
+  font-size: clamp(1.5rem, 2.7vw, 2.2rem);
+  color: #f5f8fb;
+}
+
+.inquiry-copy p:last-child {
+  margin: 0;
+  color: #a9bccd;
+  max-width: 62ch;
+}
+
+.inquiry-panel {
+  padding: 22px;
+  border-radius: 18px;
+  border: 1px solid rgba(122, 148, 172, 0.14);
+  background: linear-gradient(180deg, rgba(9, 25, 40, 0.88), rgba(5, 17, 29, 0.88));
+}
+
+.inquiry-panel strong {
+  display: block;
+  font-family: "Sora", "Public Sans", sans-serif;
+  font-size: 1.05rem;
+  color: #f7c86f;
+}
+
+.inquiry-panel span {
+  display: block;
+  margin-top: 10px;
+  color: #a9bccd;
+  line-height: 1.55;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 1fr;
+  gap: 22px;
+}
+
+.footer-grid strong {
+  display: block;
+  color: #dce7f0;
+  margin-bottom: 8px;
+  font-family: "Sora", "Public Sans", sans-serif;
+}
+
+.footer-grid p {
+  margin: 0 0 6px;
+  color: #87a0b5;
+  line-height: 1.5;
+}
+
+.footer-grid a {
+  color: #b4c8d8;
+  text-decoration: none;
+}
+
 .home-page footer {
   border-top: 1px solid rgba(117, 142, 166, 0.14);
   color: #87a0b5;
@@ -1040,6 +1105,7 @@ footer .container {
   .cinematic-hero,
   .overview-band,
   .credibility-band,
+  .inquiry-strip,
   .mission-strip {
     grid-template-columns: 1fr;
   }
@@ -1056,6 +1122,10 @@ footer .container {
 
   .mission-points,
   .feature-strip-wide {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
     grid-template-columns: 1fr;
   }
 
