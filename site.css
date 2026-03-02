@@ -189,14 +189,21 @@ a {
   align-items: stretch;
 }
 
+.hero-minimal {
+  min-height: calc(100vh - 110px);
+  grid-template-columns: 1fr;
+  align-items: end;
+  padding: 0 0 34px;
+}
+
 .title,
 .dimensions,
 .metrics,
 .spec-table,
 .features {
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(125, 148, 170, 0.12);
-  background: linear-gradient(160deg, rgba(10, 28, 45, 0.72), rgba(6, 19, 32, 0.7));
+  border: 1px solid rgba(125, 148, 170, 0.1);
+  background: linear-gradient(160deg, rgba(10, 28, 45, 0.52), rgba(6, 19, 32, 0.5));
   box-shadow: var(--shadow-sm);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -204,6 +211,11 @@ a {
 
 .title {
   padding: 28px;
+}
+
+.hero-caption {
+  max-width: 760px;
+  padding: 0;
 }
 
 .product-page {
@@ -268,6 +280,10 @@ a {
   z-index: 3;
 }
 
+.product-page .product {
+  padding-top: 0;
+}
+
 .title h1 {
   margin: 0;
   font-family: "Sora", "Public Sans", sans-serif;
@@ -277,9 +293,10 @@ a {
 }
 
 .subtitle {
-  margin-top: 6px;
+  margin-top: 10px;
   color: #9fb3c5;
   font-size: clamp(1rem, 2.4vw, 1.6rem);
+  max-width: 20ch;
 }
 
 .art {
@@ -319,7 +336,7 @@ a {
 }
 
 .stats-grid {
-  margin-top: 24px;
+  margin-top: 8px;
   display: grid;
   grid-template-columns: 1fr 1.1fr;
   gap: 24px;
@@ -328,7 +345,7 @@ a {
 .metrics {
   display: grid;
   gap: 10px;
-  padding: 18px;
+  padding: 14px 18px;
 }
 
 .metric {
@@ -409,7 +426,7 @@ a {
 .features {
   margin-top: 24px;
   padding: 24px;
-  background: linear-gradient(160deg, rgba(10, 28, 45, 0.68), rgba(6, 19, 32, 0.64));
+  background: linear-gradient(160deg, rgba(10, 28, 45, 0.54), rgba(6, 19, 32, 0.5));
 }
 
 .features h2 {
@@ -579,11 +596,12 @@ footer .container {
 }
 
 .feature-strip {
-  margin-top: 18px;
+  margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   align-items: flex-start;
+  max-width: 720px;
 }
 
 .feature-strip-wide {
@@ -609,6 +627,29 @@ footer .container {
 
 .single-grid {
   grid-template-columns: 1fr;
+}
+
+.scroll-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(170, 190, 209, 0.16);
+  background: rgba(5, 18, 31, 0.28);
+  color: #d5e2ec;
+  font-size: 0.88rem;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.scroll-indicator::after {
+  content: "↓";
+  font-size: 1rem;
 }
 
 .compare-block {
