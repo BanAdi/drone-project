@@ -195,9 +195,11 @@ a {
 .spec-table,
 .features {
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(125, 148, 170, 0.16);
-  background: linear-gradient(160deg, rgba(10, 28, 45, 0.95), rgba(6, 19, 32, 0.95));
+  border: 1px solid rgba(125, 148, 170, 0.12);
+  background: linear-gradient(160deg, rgba(10, 28, 45, 0.72), rgba(6, 19, 32, 0.7));
   box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .title {
@@ -299,7 +301,7 @@ a {
 .dimensions {
   border-left: 4px solid var(--orange);
   padding: 24px 22px;
-  background: linear-gradient(165deg, rgba(18, 32, 45, 0.95), rgba(11, 22, 34, 0.95));
+  background: linear-gradient(165deg, rgba(18, 32, 45, 0.66), rgba(11, 22, 34, 0.62));
 }
 
 .dimensions h3 {
@@ -407,7 +409,7 @@ a {
 .features {
   margin-top: 24px;
   padding: 24px;
-  background: linear-gradient(160deg, rgba(10, 28, 45, 0.95), rgba(6, 19, 32, 0.95));
+  background: linear-gradient(160deg, rgba(10, 28, 45, 0.68), rgba(6, 19, 32, 0.64));
 }
 
 .features h2 {
@@ -594,8 +596,8 @@ footer .container {
   border-radius: 999px;
   border: 1px solid rgba(170, 190, 209, 0.18);
   background:
-    radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.14), transparent 42%),
-    linear-gradient(160deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.03));
+    radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.12), transparent 42%),
+    linear-gradient(160deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
   color: #e6eef5;
   font-size: 0.92rem;
   font-weight: 600;
