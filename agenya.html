@@ -44,7 +44,7 @@
 
     <main class="container product">
       <section class="hero hero-minimal">
-        <div class="hero-caption">
+        <div class="hero-caption" data-media-gated hidden>
           <p class="kicker">Formerly Sichen</p>
           <h1>Strike Drone Agneya</h1>
           <div class="subtitle">Meaning born of fire, Agneya represents a relentless high-temperature tactical force engineered to overwhelm enemy defenses.</div>
@@ -53,7 +53,7 @@
             <div class="feature-chip">Thermobaric</div>
           </div>
         </div>
-        <a class="scroll-indicator" href="#agenya-specs">Scroll for specifications</a>
+        <a class="scroll-indicator" data-media-gated hidden href="#agenya-specs">Scroll for specifications</a>
       </section>
 
       <section class="stats-grid single-grid" id="agenya-specs">
@@ -102,6 +102,9 @@
         function showStill() {
           media.classList.add("is-finished");
           page.classList.add("media-finished");
+          document.querySelectorAll("[data-media-gated]").forEach((element) => {
+            element.hidden = false;
+          });
         }
 
         video.addEventListener("ended", showStill, { once: true });

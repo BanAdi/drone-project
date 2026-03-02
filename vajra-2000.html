@@ -44,7 +44,7 @@
 
     <main class="container product">
       <section class="hero hero-minimal">
-        <div class="hero-caption">
+        <div class="hero-caption" data-media-gated hidden>
           <p class="kicker">Formerly Mammoth</p>
           <h1>Strike Drone Vajra-2000</h1>
           <div class="subtitle">Derived from the indestructible thunderbolt of Indra, signifying a supreme strike system built to hit with absolute authority.</div>
@@ -54,7 +54,7 @@
             <div class="feature-chip">Thermobaric munition</div>
           </div>
         </div>
-        <a class="scroll-indicator" href="#vajra-specs">Scroll for specifications</a>
+        <a class="scroll-indicator" data-media-gated hidden href="#vajra-specs">Scroll for specifications</a>
       </section>
 
       <section class="stats-grid single-grid" id="vajra-specs">
@@ -103,6 +103,9 @@
         function showStill() {
           media.classList.add("is-finished");
           page.classList.add("media-finished");
+          document.querySelectorAll("[data-media-gated]").forEach((element) => {
+            element.hidden = false;
+          });
         }
 
         video.addEventListener("ended", showStill, { once: true });
