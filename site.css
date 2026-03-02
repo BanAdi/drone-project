@@ -249,21 +249,21 @@ a {
   z-index: 1;
   opacity: 1;
   transition: opacity 0.7s ease;
-  filter: brightness(1.42) contrast(1.16) saturate(1.18);
+  filter: brightness(1.28) contrast(1.12) saturate(1.12);
 }
 
 .page-bg-image {
   z-index: 0;
   opacity: 0;
   transition: opacity 0.7s ease;
-  filter: brightness(1.48) contrast(1.16) saturate(1.14);
+  filter: brightness(1.32) contrast(1.12) saturate(1.1);
 }
 
 .page-bg-overlay {
   z-index: 2;
   background:
-    radial-gradient(circle at 50% 24%, rgba(8, 32, 56, 0.03), transparent 34%),
-    linear-gradient(180deg, rgba(2, 10, 19, 0.12), rgba(3, 13, 24, 0.26) 44%, rgba(3, 13, 24, 0.44) 100%);
+    radial-gradient(circle at 50% 24%, rgba(8, 32, 56, 0.05), transparent 32%),
+    linear-gradient(180deg, rgba(2, 10, 19, 0.18), rgba(3, 13, 24, 0.34) 44%, rgba(3, 13, 24, 0.54) 100%);
 }
 
 .page-bg-media.is-finished .page-bg-video {
