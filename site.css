@@ -998,6 +998,14 @@ footer .container {
   color: #a9bccd;
 }
 
+.system-note {
+  margin: 0 0 20px;
+  max-width: 28ch;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: #8da7bf;
+}
+
 .home-page .card-label {
   color: #f7c86f;
 }
