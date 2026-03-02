@@ -6,7 +6,26 @@
     <title>Vajra-2000</title>
     <link rel="stylesheet" href="site.css?v=3" />
   </head>
-  <body>
+  <body class="product-page">
+    <div class="page-bg-media" id="vajra-bg-media">
+      <video
+        class="page-bg-video"
+        id="vajra-hero-video"
+        autoplay
+        muted
+        playsinline
+        preload="metadata"
+        poster="media/vajra-2000-hero.png"
+      >
+        <source src="media/vajra-2000.mp4" type="video/mp4" />
+      </video>
+      <img
+        class="page-bg-image"
+        src="media/vajra-2000-hero.png"
+        alt="Vajra-2000 background visual"
+      />
+      <div class="page-bg-overlay"></div>
+    </div>
     <header class="site-header">
       <div class="container nav">
         <a class="brand" href="index.html">Astraeus Dynamics</a>
@@ -21,24 +40,6 @@
     <main class="container product">
       <section class="hero hero-wide">
         <div class="title">
-          <div class="hero-media" id="vajra-hero-media">
-            <video
-              class="hero-video"
-              id="vajra-hero-video"
-              autoplay
-              muted
-              playsinline
-              preload="metadata"
-              poster="media/vajra-2000-hero.png"
-            >
-              <source src="media/vajra-2000.mp4" type="video/mp4" />
-            </video>
-            <img
-              class="hero-still"
-              src="media/vajra-2000-hero.png"
-              alt="Vajra-2000 hero visual"
-            />
-          </div>
           <p class="kicker">Product A</p>
           <h1>Strike Drone Vajra-2000</h1>
           <div class="subtitle">Heavy strike platform with modular warhead options</div>
@@ -91,7 +92,7 @@
 
     <script>
       (function () {
-        const media = document.getElementById("vajra-hero-media");
+        const media = document.getElementById("vajra-bg-media");
         const video = document.getElementById("vajra-hero-video");
         if (!media || !video) return;
 
