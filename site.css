@@ -983,6 +983,15 @@ footer .container {
   color: #a5b9ca;
 }
 
+.system-role {
+  margin: 4px 0 10px;
+  font-family: "Sora", "Public Sans", sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #a9bccd;
+}
+
 .home-page .card-label {
   color: #f7c86f;
 }
