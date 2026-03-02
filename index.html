@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aerial Systems Catalog</title>
+    <title>Astraeus Dynamics Catalog</title>
     <link rel="stylesheet" href="site.css" />
   </head>
-  <body>
+  <body class="home-page">
     <header class="site-header">
       <div class="container nav">
-        <a class="brand" href="index.html">Aerial Systems</a>
+        <a class="brand" href="index.html">Astraeus Dynamics</a>
         <nav class="links">
           <a href="vajra-2000.html">Vajra-2000</a>
           <a href="agenya.html">Agenya</a>
@@ -19,18 +19,60 @@
     </header>
 
     <main class="container">
-      <section class="home-hero">
-        <p class="kicker">Updated Catalog</p>
-        <h1>Strike and Interceptor Systems</h1>
+      <section class="home-hero cinematic-hero">
+        <div class="hero-copy">
+          <p class="kicker">Updated Catalog</p>
+          <h1>Autonomous Strike and Interceptor Systems</h1>
+          <p>
+            Astraeus Dynamics develops long-range strike and interceptor platforms
+            for precision missions, layered response, and rapid deployment
+            across contested environments.
+          </p>
+          <div class="hero-actions">
+            <a class="btn" href="vajra-2000.html">Explore Catalog</a>
+            <a class="ghost-btn" href="#systems">View Systems</a>
+          </div>
+        </div>
+
+        <div class="hero-stage">
+          <div class="stage-grid"></div>
+          <div class="stage-ring stage-ring-a"></div>
+          <div class="stage-ring stage-ring-b"></div>
+          <div class="stage-panel">
+            <span>STRIKE</span>
+            <span>INTERCEPT</span>
+            <span>AUTONOMY</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="overview-band">
+        <div class="overview-card">
+          <strong>450 km</strong>
+          <span>Maximum tactical range in current public lineup</span>
+        </div>
+        <div class="overview-card">
+          <strong>100 kg</strong>
+          <span>Top payload class across strike systems</span>
+        </div>
+        <div class="overview-card">
+          <strong>3 Platforms</strong>
+          <span>Strike and interceptor systems in the updated catalog</span>
+        </div>
+      </section>
+
+      <section id="systems" class="systems-intro">
+        <p class="kicker">Featured Systems</p>
+        <h2>Three platforms. Distinct mission profiles.</h2>
         <p>
-          The public catalog now highlights three systems from the revised product
-          lineup: Vajra-2000, Agenya, and Shyena. Previous pages are archived for
-          internal recovery and are no longer linked from the live site.
+          The current catalog is organized around heavy strike, medium strike,
+          and interceptor roles with clear performance envelopes and mission-fit
+          positioning.
         </p>
       </section>
 
-      <section class="cards">
-        <article class="card stack-card">
+      <section class="cards home-cards">
+        <article class="card stack-card home-system-card">
           <p class="card-label">Product A</p>
           <h2>Vajra-2000</h2>
           <p>
@@ -45,7 +87,7 @@
           <a class="btn" href="vajra-2000.html">Open page</a>
         </article>
 
-        <article class="card stack-card">
+        <article class="card stack-card home-system-card">
           <p class="card-label">Product B</p>
           <h2>Agenya</h2>
           <p>
@@ -60,7 +102,7 @@
           <a class="btn" href="agenya.html">Open page</a>
         </article>
 
-        <article class="card stack-card">
+        <article class="card stack-card home-system-card">
           <p class="card-label">Product C</p>
           <h2>Shyena</h2>
           <p>
@@ -75,10 +117,23 @@
           <a class="btn" href="shyena.html">Open page</a>
         </article>
       </section>
+
+      <section class="mission-strip">
+        <div class="mission-copy">
+          <p class="kicker">Mission Logic</p>
+          <h2>Built for response speed, control integrity, and role clarity.</h2>
+        </div>
+        <div class="mission-points">
+          <div class="mission-point">Long-range strike coverage</div>
+          <div class="mission-point">Thermal and terminal guidance capability</div>
+          <div class="mission-point">Single-station multi-UAV control</div>
+          <div class="mission-point">Payload-scaled platform architecture</div>
+        </div>
+      </section>
     </main>
 
     <footer>
-      <div class="container">© 2026 Aerial Systems</div>
+      <div class="container">© 2026 Astraeus Dynamics</div>
     </footer>
   </body>
 </html>
