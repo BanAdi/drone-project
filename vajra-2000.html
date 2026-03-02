@@ -21,6 +21,24 @@
     <main class="container product">
       <section class="hero hero-wide">
         <div class="title">
+          <div class="hero-media" id="vajra-hero-media">
+            <video
+              class="hero-video"
+              id="vajra-hero-video"
+              autoplay
+              muted
+              playsinline
+              preload="metadata"
+              poster="media/vajra-2000-hero.png"
+            >
+              <source src="media/vajra-2000.mp4" type="video/mp4" />
+            </video>
+            <img
+              class="hero-still"
+              src="media/vajra-2000-hero.png"
+              alt="Vajra-2000 hero visual"
+            />
+          </div>
           <p class="kicker">Product A</p>
           <h1>Strike Drone Vajra-2000</h1>
           <div class="subtitle">Heavy strike platform with modular warhead options</div>
@@ -70,5 +88,25 @@
     <footer>
       <div class="container">© 2026 Astraeus Dynamics</div>
     </footer>
+
+    <script>
+      (function () {
+        const media = document.getElementById("vajra-hero-media");
+        const video = document.getElementById("vajra-hero-video");
+        if (!media || !video) return;
+
+        function showStill() {
+          media.classList.add("is-finished");
+        }
+
+        video.addEventListener("ended", showStill, { once: true });
+        video.addEventListener("error", showStill, { once: true });
+
+        const playAttempt = video.play();
+        if (playAttempt && typeof playAttempt.catch === "function") {
+          playAttempt.catch(showStill);
+        }
+      })();
+    </script>
   </body>
 </html>
