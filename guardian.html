@@ -11,8 +11,19 @@
     <meta name="theme-color" content="#051627" />
     <link rel="stylesheet" href="site.css?v=3" />
   </head>
-  <body class="product-page guardian-page media-finished">
-    <div class="page-bg-media is-finished" id="guardian-bg-media">
+  <body class="product-page guardian-page">
+    <div class="page-bg-media" id="guardian-bg-media">
+      <video
+        class="page-bg-video"
+        id="guardian-hero-video"
+        autoplay
+        muted
+        playsinline
+        preload="metadata"
+        poster="media/guardian.png"
+      >
+        <source src="media/guardian.mp4" type="video/mp4" />
+      </video>
       <img
         class="page-bg-image"
         src="media/guardian.png"
@@ -34,7 +45,7 @@
 
     <main class="container product">
       <section class="hero hero-minimal">
-        <div class="hero-caption">
+        <div class="hero-caption" data-media-gated hidden>
           <p class="kicker">Surveillance Platform</p>
           <h1>Guardian</h1>
           <div class="subtitle">
@@ -49,7 +60,7 @@
           </div>
         </div>
 
-        <a class="scroll-indicator" href="#guardian-specs">Scroll for specifications</a>
+        <a class="scroll-indicator" data-media-gated hidden href="#guardian-specs">Scroll for specifications</a>
       </section>
 
       <section class="stats-grid single-grid" id="guardian-specs">
@@ -96,5 +107,33 @@
     <footer>
       <div class="container">© 2026 Astraeus Dynamics</div>
     </footer>
+
+    <script>
+      (function () {
+        const page = document.body;
+        const media = document.getElementById("guardian-bg-media");
+        const video = document.getElementById("guardian-hero-video");
+        if (!media || !video) {
+          page.classList.add("media-finished");
+          return;
+        }
+
+        function showStill() {
+          media.classList.add("is-finished");
+          page.classList.add("media-finished");
+          document.querySelectorAll("[data-media-gated]").forEach((element) => {
+            element.hidden = false;
+          });
+        }
+
+        video.addEventListener("ended", showStill, { once: true });
+        video.addEventListener("error", showStill, { once: true });
+
+        const playAttempt = video.play();
+        if (playAttempt && typeof playAttempt.catch === "function") {
+          playAttempt.catch(showStill);
+        }
+      })();
+    </script>
   </body>
 </html>
