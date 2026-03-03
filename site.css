@@ -298,6 +298,12 @@ a {
   background: #041425;
 }
 
+.guardian-page .page-bg-image {
+  object-fit: contain;
+  object-position: center;
+  background: #041425;
+}
+
 .product-page .site-header,
 .product-page .product,
 .product-page footer {
