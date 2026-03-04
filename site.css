@@ -1069,6 +1069,51 @@ footer .container {
   line-height: 1.45;
 }
 
+.technical-about {
+  margin: 4px 0 30px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 18px;
+  padding: 24px;
+  border-radius: 20px;
+  border: 1px solid rgba(120, 146, 170, 0.16);
+  background:
+    linear-gradient(155deg, rgba(10, 27, 44, 0.9), rgba(5, 17, 30, 0.88)),
+    radial-gradient(circle at 85% 15%, rgba(216, 161, 63, 0.11), transparent 38%);
+}
+
+.technical-about-copy h2 {
+  margin: 0 0 12px;
+  color: #f5f8fb;
+}
+
+.technical-about-copy p {
+  margin: 0;
+  color: #a9bccd;
+  line-height: 1.62;
+  max-width: 72ch;
+}
+
+.technical-about-panel {
+  align-self: center;
+  padding: 18px;
+  border-radius: 14px;
+  border: 1px solid rgba(122, 147, 170, 0.22);
+  background: rgba(8, 22, 36, 0.62);
+}
+
+.technical-about-panel strong {
+  display: block;
+  font-family: "Sora", "Public Sans", sans-serif;
+  color: #f7c86f;
+  margin-bottom: 8px;
+}
+
+.technical-about-panel span {
+  color: #a9bccd;
+  line-height: 1.55;
+}
+
 .inquiry-strip {
   display: grid;
   grid-template-columns: 1fr 0.9fr;
@@ -1143,6 +1188,7 @@ footer .container {
   .cinematic-hero,
   .overview-band,
   .credibility-band,
+  .technical-about,
   .inquiry-strip,
   .mission-strip {
     grid-template-columns: 1fr;
