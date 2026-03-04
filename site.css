@@ -761,6 +761,42 @@ footer .container {
     linear-gradient(180deg, #04192d 0%, #051627 55%, #061220 100%);
 }
 
+.home-main {
+  padding-bottom: 24px;
+}
+
+.section-block {
+  position: relative;
+  margin-top: 18px;
+  padding: 24px;
+  border-radius: 22px;
+  border: 1px solid rgba(120, 146, 170, 0.16);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.section-glass {
+  background:
+    linear-gradient(165deg, rgba(10, 29, 47, 0.84), rgba(5, 16, 28, 0.82)),
+    radial-gradient(circle at 86% 10%, rgba(216, 161, 63, 0.1), transparent 34%);
+}
+
+.section-deep {
+  background:
+    linear-gradient(165deg, rgba(6, 19, 32, 0.9), rgba(4, 13, 23, 0.9)),
+    radial-gradient(circle at 12% 80%, rgba(76, 131, 177, 0.14), transparent 28%);
+}
+
+.section-divider::after {
+  content: "";
+  position: absolute;
+  left: 26px;
+  right: 26px;
+  bottom: -10px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(215, 164, 54, 0.5), transparent);
+}
+
 .home-page .site-header {
   border-bottom: 1px solid rgba(145, 168, 191, 0.16);
   background: rgba(3, 17, 31, 0.66);
@@ -781,17 +817,30 @@ footer .container {
   box-shadow: none;
 }
 
-.cinematic-hero {
+.home-hero-banner {
+  min-height: 74vh;
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 28px;
-  margin-top: 26px;
-  padding: 34px;
-  border: 1px solid rgba(118, 143, 166, 0.16);
+  place-items: center;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 0 30px 68px -40px rgba(0, 0, 0, 0.75);
+}
+
+.home-hero-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
   background:
-    linear-gradient(135deg, rgba(8, 30, 51, 0.94), rgba(5, 18, 31, 0.82)),
-    radial-gradient(circle at 70% 30%, rgba(216, 161, 63, 0.12), transparent 30%);
-  box-shadow: 0 30px 60px -38px rgba(0, 0, 0, 0.72);
+    linear-gradient(180deg, rgba(3, 13, 24, 0.48) 0%, rgba(3, 13, 24, 0.8) 78%, rgba(3, 13, 24, 0.92) 100%),
+    url("media/guardian.png") center 35% / cover no-repeat;
+  filter: saturate(1.08) contrast(1.05);
+  transform: scale(1.03);
+}
+
+.hero-overlay-content {
+  position: relative;
+  z-index: 1;
+  width: min(900px, 92%);
 }
 
 .home-page .home-hero h1,
@@ -806,14 +855,20 @@ footer .container {
   color: #a9bccd;
 }
 
-.hero-copy {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.home-hero-banner h1 {
+  margin: 0 auto 14px;
+  max-width: 20ch;
+  font-family: "Sora", "Public Sans", sans-serif;
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  line-height: 1.04;
+  letter-spacing: -0.025em;
 }
 
-.hero-copy h1 {
-  max-width: 10ch;
+.home-hero-banner p {
+  margin: 0 auto;
+  max-width: 66ch;
+  font-size: 1.12rem;
+  line-height: 1.75;
 }
 
 .hero-actions {
@@ -821,6 +876,7 @@ footer .container {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .ghost-btn {
@@ -834,6 +890,13 @@ footer .container {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   font-size: 0.9rem;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+}
+
+.ghost-btn:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.09);
+  box-shadow: 0 14px 24px -18px rgba(0, 0, 0, 0.8);
 }
 
 .hero-stage {
@@ -905,14 +968,22 @@ footer .container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
-  margin-top: 18px;
+  margin-top: 0;
 }
 
 .overview-card {
   padding: 18px 20px;
   border-radius: 18px;
   border: 1px solid rgba(119, 145, 169, 0.16);
-  background: linear-gradient(180deg, rgba(12, 28, 46, 0.88), rgba(7, 19, 33, 0.88));
+  background: linear-gradient(180deg, rgba(12, 28, 46, 0.62), rgba(7, 19, 33, 0.62));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform 0.22s ease, border-color 0.22s ease;
+}
+
+.overview-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(159, 184, 208, 0.34);
 }
 
 .overview-card strong {
@@ -930,7 +1001,8 @@ footer .container {
 }
 
 .systems-intro {
-  padding: 44px 0 8px;
+  padding-top: 28px;
+  padding-bottom: 16px;
 }
 
 .credibility-band {
@@ -989,7 +1061,8 @@ footer .container {
 }
 
 .home-cards {
-  padding-top: 20px;
+  padding-top: 14px;
+  padding-bottom: 12px;
 }
 
 .home-system-card {
@@ -1001,6 +1074,8 @@ footer .container {
 }
 
 .home-system-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(165, 188, 210, 0.28);
   box-shadow: 0 24px 36px -26px rgba(0, 0, 0, 0.7);
 }
 
@@ -1015,19 +1090,11 @@ footer .container {
 .system-role {
   margin: 6px 0 20px;
   font-family: "Sora", "Public Sans", sans-serif;
-  font-size: 1.02rem;
+  font-size: 1.06rem;
   line-height: 1.45;
   letter-spacing: 0.015em;
   text-transform: none;
   color: #a9bccd;
-}
-
-.system-note {
-  margin: 0 0 20px;
-  max-width: 28ch;
-  font-size: 0.98rem;
-  line-height: 1.55;
-  color: #8da7bf;
 }
 
 .home-page .card-label {
@@ -1044,8 +1111,8 @@ footer .container {
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
   gap: 24px;
-  margin: 14px 0 58px;
-  padding: 26px 0 0;
+  margin: 0;
+  padding-top: 14px;
 }
 
 .mission-copy h2 {
@@ -1070,7 +1137,7 @@ footer .container {
 }
 
 .technical-about {
-  margin: 4px 0 30px;
+  margin: 0;
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: 18px;
@@ -1118,8 +1185,8 @@ footer .container {
   display: grid;
   grid-template-columns: 1fr 0.9fr;
   gap: 24px;
-  margin: 10px 0 54px;
-  padding-top: 12px;
+  margin: 0 0 36px;
+  padding-top: 14px;
 }
 
 .inquiry-copy h2 {
@@ -1177,6 +1244,11 @@ footer .container {
 .footer-grid a {
   color: #b4c8d8;
   text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-grid a:hover {
+  color: #f3c873;
 }
 
 .home-page footer {
@@ -1185,7 +1257,6 @@ footer .container {
 }
 
 @media (max-width: 980px) {
-  .cinematic-hero,
   .overview-band,
   .credibility-band,
   .technical-about,
@@ -1194,14 +1265,15 @@ footer .container {
     grid-template-columns: 1fr;
   }
 
-  .hero-stage {
-    min-height: 320px;
+  .home-hero-banner {
+    min-height: 62vh;
+    padding: 26px 18px;
   }
 }
 
 @media (max-width: 620px) {
-  .cinematic-hero {
-    padding: 22px;
+  .section-block {
+    padding: 18px;
   }
 
   .mission-points,
@@ -1213,7 +1285,7 @@ footer .container {
     grid-template-columns: 1fr;
   }
 
-  .hero-copy h1 {
+  .home-hero-banner h1 {
     max-width: none;
   }
 }
