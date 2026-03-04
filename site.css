@@ -846,6 +846,11 @@ footer .container {
   place-items: center;
   text-align: center;
   overflow: hidden;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  border-radius: 0;
+  border: 0;
   box-shadow: 0 30px 68px -40px rgba(0, 0, 0, 0.75);
 }
 
