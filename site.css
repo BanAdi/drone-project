@@ -1157,8 +1157,8 @@ footer .container {
   width: min(1320px, 94vw);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(4, minmax(160px, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  gap: 18px 36px;
 }
 
 .impact-item {
@@ -1168,9 +1168,9 @@ footer .container {
 
 .impact-value {
   font-family: "Sora", "Public Sans", sans-serif;
-  font-size: clamp(2.4rem, 7vw, 6.1rem);
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-size: clamp(2.2rem, 6vw, 5rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
   line-height: 1;
   color: #eef2f8;
 }
