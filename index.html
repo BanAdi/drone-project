@@ -9,7 +9,7 @@
       content="Astraeus Dynamics presents autonomous strike, interceptor, and surveillance platforms including Vajra-2000, Agneya, Sheyna, and Guardian."
     />
     <meta name="theme-color" content="#051627" />
-    <link rel="stylesheet" href="site.css?v=8" />
+    <link rel="stylesheet" href="site.css?v=9" />
   </head>
   <body class="home-page">
     <header class="site-header">
@@ -46,8 +46,25 @@
         </div>
       </section>
 
-      <section class="proof-strip section-block section-deep section-divider">
-        <p>Combat-validated systems. Deployment-first engineering. Sovereign integration stack.</p>
+      <section class="impact-strip section-divider" id="impact">
+        <div class="impact-grid">
+          <article class="impact-item">
+            <div class="impact-value" data-target="5000" data-suffix="+">0+</div>
+            <div class="impact-label">Drones Delivered in Combat</div>
+          </article>
+          <article class="impact-item">
+            <div class="impact-value" data-target="3" data-suffix="+">0+</div>
+            <div class="impact-label">Systems in Motion</div>
+          </article>
+          <article class="impact-item">
+            <div class="impact-value" data-target="1100" data-suffix="+">0+</div>
+            <div class="impact-label">Max Tactical Range (km)</div>
+          </article>
+          <article class="impact-item">
+            <div class="impact-value" data-target="100" data-suffix="+">0+</div>
+            <div class="impact-label">Top Payload Class (kg)</div>
+          </article>
+        </div>
       </section>
 
       <section id="systems" class="systems-intro section-block section-deep section-divider">
@@ -106,5 +123,39 @@
         </div>
       </div>
     </footer>
+    <script>
+      (function () {
+        const counters = document.querySelectorAll(".impact-value[data-target]");
+        if (!counters.length) return;
+
+        const duration = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 1800;
+
+        counters.forEach((counter) => {
+          const target = Number(counter.getAttribute("data-target")) || 0;
+          const suffix = counter.getAttribute("data-suffix") || "";
+
+          if (duration === 0) {
+            counter.textContent = target.toLocaleString() + suffix;
+            return;
+          }
+
+          const startTime = performance.now();
+
+          function tick(now) {
+            const progress = Math.min((now - startTime) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const value = Math.floor(target * eased);
+            counter.textContent = value.toLocaleString() + suffix;
+            if (progress < 1) {
+              requestAnimationFrame(tick);
+            } else {
+              counter.textContent = target.toLocaleString() + suffix;
+            }
+          }
+
+          requestAnimationFrame(tick);
+        });
+      })();
+    </script>
   </body>
 </html>
