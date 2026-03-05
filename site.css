@@ -1147,9 +1147,13 @@ footer .container {
 }
 
 .impact-strip {
-  margin: 0;
-  padding: 30px 20px;
-  background: #01050b;
+  margin: 10px 0 18px;
+  padding: 34px 20px;
+  background:
+    linear-gradient(180deg, rgba(8, 21, 36, 0.78), rgba(2, 9, 16, 0.9)),
+    #01050b;
+  border-top: 1px solid rgba(96, 132, 170, 0.16);
+  border-bottom: 1px solid rgba(96, 132, 170, 0.14);
   border-radius: 0;
 }
 
@@ -1167,9 +1171,13 @@ footer .container {
   width: 100%;
   max-width: 420px;
   text-align: center;
-  padding: 16px 8px;
+  padding: 16px 12px;
   display: grid;
   justify-items: center;
+}
+
+.impact-item + .impact-item {
+  border-left: 1px solid rgba(112, 145, 178, 0.2);
 }
 
 .impact-value {
@@ -1640,12 +1648,19 @@ footer a:hover {
   }
 
   .impact-strip {
+    margin: 8px 0 14px;
     padding: 24px 10px;
   }
 
   .impact-grid {
     grid-template-columns: 1fr;
     gap: 12px;
+  }
+
+  .impact-item + .impact-item {
+    border-left: 0;
+    border-top: 1px solid rgba(112, 145, 178, 0.2);
+    padding-top: 20px;
   }
 
   .home-hero-banner h1 {
