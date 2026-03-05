@@ -561,9 +561,40 @@ footer .container {
 
 @media (max-width: 620px) {
   .nav {
-    padding: 8px 0;
-    align-items: flex-start;
-    flex-direction: column;
+    min-height: auto;
+    grid-template-columns: 1fr;
+    align-items: stretch;
+    gap: 6px;
+    padding: 8px 0 10px;
+  }
+
+  .brand {
+    font-size: 0.98rem;
+    letter-spacing: 0.02em;
+  }
+
+  .links {
+    gap: 8px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .links a {
+    white-space: nowrap;
+    font-size: 0.86rem;
+    padding: 7px 10px;
+  }
+
+  .links-products,
+  .links-site {
+    justify-self: auto;
+    justify-content: flex-start;
   }
 
   .home-hero {
@@ -1622,7 +1653,7 @@ footer a:hover {
 
 @media (max-width: 620px) {
   body {
-    padding-top: 122px;
+    padding-top: 112px;
   }
 
   .home-main::before {
@@ -1684,11 +1715,34 @@ footer a:hover {
   }
 
   .nav {
-    display: flex;
-    flex-direction: column;
+    min-height: auto;
+    grid-template-columns: 1fr;
     align-items: stretch;
+    gap: 6px;
+    padding: 8px 0 10px;
+  }
+
+  .brand {
+    font-size: 0.98rem;
+    letter-spacing: 0.02em;
+  }
+
+  .links {
     gap: 8px;
-    padding: 8px 0;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .links a {
+    white-space: nowrap;
+    font-size: 0.86rem;
+    padding: 7px 10px;
   }
 
   .links-products,
