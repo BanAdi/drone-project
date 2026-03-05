@@ -1088,6 +1088,20 @@ footer .container {
   max-width: 62ch;
 }
 
+.proof-strip {
+  text-align: center;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.proof-strip p {
+  margin: 0;
+  color: #d4e1ec;
+  font-family: "Sora", "Public Sans", sans-serif;
+  font-size: clamp(1rem, 2.1vw, 1.25rem);
+  letter-spacing: 0.03em;
+}
+
 .home-cards {
   padding-top: 14px;
   padding-bottom: 12px;
@@ -1184,6 +1198,14 @@ footer .container {
   max-width: 48ch;
 }
 
+.home-cta {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
 .static-main {
   padding-bottom: 26px;
 }
@@ -1266,6 +1288,44 @@ footer .container {
   display: grid;
   gap: 8px;
   color: #d8e3ec;
+}
+
+.contact-action {
+  margin-top: 14px !important;
+}
+
+.submit-form {
+  display: grid;
+  gap: 10px;
+  max-width: 780px;
+}
+
+.submit-form label {
+  font-weight: 600;
+  color: #d9e5ef;
+  margin-top: 6px;
+}
+
+.submit-form input,
+.submit-form select,
+.submit-form textarea {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgba(145, 169, 191, 0.24);
+  background: rgba(6, 20, 34, 0.75);
+  color: #eaf2f8;
+  padding: 11px 12px;
+  font: inherit;
+}
+
+.submit-form textarea {
+  resize: vertical;
+}
+
+.hidden-field {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
 }
 
 .technical-about {
@@ -1406,6 +1466,11 @@ footer a:hover {
   .mission-strip,
   .contact-grid {
     grid-template-columns: 1fr;
+  }
+
+  .home-cta {
+    flex-direction: column;
+    align-items: stretch;
   }
 
   .home-hero-banner {

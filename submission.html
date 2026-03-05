@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Submit Inquiry | Astraeus Dynamics</title>
+    <meta
+      name="description"
+      content="Submit a briefing or partnership inquiry to Astraeus Dynamics."
+    />
+    <meta name="theme-color" content="#051627" />
+    <link rel="stylesheet" href="site.css?v=6" />
+  </head>
+  <body class="home-page static-page">
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="index.html">Astraeus Dynamics</a>
+        <nav class="links">
+          <a href="vajra-2000.html">Vajra-2000</a>
+          <a href="agenya.html">Agneya</a>
+          <a href="shyena.html">Sheyna</a>
+          <a href="guardian.html">Guardian</a>
+          <a href="about.html">About</a>
+          <a class="active" href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container static-main">
+      <section class="section-block section-glass section-divider static-hero">
+        <p class="kicker">Submission</p>
+        <h1>Request Briefing or Partnership Discussion</h1>
+        <p>
+          This form is configured for Web3Forms. Replace the access key before
+          using it live.
+        </p>
+      </section>
+
+      <section class="section-block section-deep">
+        <form class="submit-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="REPLACE_WITH_YOUR_WEB3FORMS_ACCESS_KEY" />
+          <input type="hidden" name="subject" value="Astraeus Dynamics Website Inquiry" />
+          <input type="hidden" name="from_name" value="Astraeus Dynamics Site" />
+          <input type="checkbox" name="botcheck" class="hidden-field" tabindex="-1" autocomplete="off" />
+
+          <label for="name">Full Name</label>
+          <input id="name" name="name" type="text" required />
+
+          <label for="email">Work Email</label>
+          <input id="email" name="email" type="email" required />
+
+          <label for="organization">Organization</label>
+          <input id="organization" name="organization" type="text" />
+
+          <label for="purpose">Inquiry Type</label>
+          <select id="purpose" name="purpose" required>
+            <option value="">Select one</option>
+            <option value="Technical Briefing">Technical Briefing</option>
+            <option value="Partnership">Partnership</option>
+            <option value="Procurement Discussion">Procurement Discussion</option>
+            <option value="Other">Other</option>
+          </select>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+
+          <button class="btn" type="submit">Submit Inquiry</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-grid">
+        <div>
+          <strong>Astraeus Dynamics</strong>
+          <p>Autonomous strike, interceptor, and surveillance systems.</p>
+        </div>
+        <div>
+          <strong>Platforms</strong>
+          <p><a href="vajra-2000.html">Vajra-2000</a></p>
+          <p><a href="agenya.html">Agneya</a></p>
+          <p><a href="shyena.html">Sheyna</a></p>
+          <p><a href="guardian.html">Guardian</a></p>
+        </div>
+        <div>
+          <strong>Company</strong>
+          <p><a href="about.html">About Us</a></p>
+          <p><a href="contact.html">Contact</a></p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
