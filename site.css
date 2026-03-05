@@ -49,16 +49,15 @@ a {
   top: 0;
   z-index: 15;
   border-bottom: 1px solid rgba(145, 168, 191, 0.16);
-  backdrop-filter: blur(10px);
-  background: rgba(3, 17, 31, 0.66);
+  background: #041525;
 }
 
 .nav {
-  min-height: 74px;
-  display: flex;
-  justify-content: space-between;
+  min-height: 76px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: 16px;
+  gap: 22px;
 }
 
 .brand {
@@ -74,6 +73,16 @@ a {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+}
+
+.links-products {
+  justify-self: center;
+  justify-content: center;
+}
+
+.links-site {
+  justify-self: end;
+  justify-content: flex-end;
 }
 
 .links a {
@@ -822,7 +831,7 @@ footer .container {
 
 .home-page .site-header {
   border-bottom: 1px solid rgba(145, 168, 191, 0.16);
-  background: rgba(3, 17, 31, 0.66);
+  background: #041525;
 }
 
 .home-page .brand {
@@ -1533,5 +1542,19 @@ footer a:hover {
 
   .home-hero-banner h1 {
     max-width: none;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 8px 0;
+  }
+
+  .links-products,
+  .links-site {
+    justify-self: auto;
+    justify-content: flex-start;
   }
 }
