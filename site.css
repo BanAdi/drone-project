@@ -1273,6 +1273,21 @@ footer .container {
   font-weight: 600;
 }
 
+.team-card {
+  text-align: center;
+}
+
+.team-photo {
+  width: 132px;
+  height: 132px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid rgba(153, 177, 199, 0.2);
+  margin: 0 auto 14px;
+  display: block;
+  box-shadow: 0 18px 26px -20px rgba(0, 0, 0, 0.82);
+}
+
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
