@@ -3,10 +3,13 @@
 :root {
   --bg: #051627;
   --bg-soft: #0a1e31;
+  --bg-deep: #031222;
   --ink: #eef5fa;
   --muted: #9fb3c5;
   --green: #73beb0;
   --orange: #d8a13f;
+  --gold-soft: #f4cd79;
+  --focus: #9dd0ff;
   --line: rgba(124, 148, 170, 0.18);
   --panel: rgba(9, 25, 40, 0.9);
   --panel-2: rgba(12, 30, 47, 0.92);
@@ -34,6 +37,7 @@ body {
   padding-top: 76px;
   font-family: "Public Sans", "Segoe UI", sans-serif;
   color: var(--ink);
+  line-height: 1.45;
   background:
     radial-gradient(circle at 12% 12%, rgba(33, 76, 114, 0.38), transparent 24%),
     radial-gradient(circle at 88% 85%, rgba(205, 150, 36, 0.16), transparent 20%),
@@ -42,6 +46,16 @@ body {
 
 a {
   color: inherit;
+  text-underline-offset: 0.2em;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
 }
 
 .container {
@@ -59,6 +73,7 @@ a {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   background: rgba(3, 17, 31, 0.58);
+  box-shadow: 0 20px 36px -34px rgba(0, 0, 0, 0.95);
 }
 
 .nav {
@@ -86,6 +101,7 @@ a {
   height: 28px;
   object-fit: contain;
   border-radius: 6px;
+  box-shadow: 0 10px 16px -12px rgba(0, 0, 0, 0.8);
 }
 
 .links {
@@ -148,13 +164,20 @@ a {
   padding: 9px 12px;
   border-radius: 999px;
   border: 1px solid transparent;
-  transition: 0.22s ease;
+  transition:
+    color 0.22s ease,
+    border-color 0.22s ease,
+    background 0.22s ease,
+    transform 0.22s ease;
 }
 
 .links a:hover,
 .links a.active {
   border-color: rgba(166, 189, 211, 0.18);
-  background: rgba(255, 255, 255, 0.06);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03)),
+    rgba(255, 255, 255, 0.06);
+  transform: translateY(-1px);
   box-shadow: none;
 }
 
@@ -193,6 +216,8 @@ a {
 }
 
 .card {
+  position: relative;
+  overflow: hidden;
   background:
     linear-gradient(180deg, rgba(11, 29, 47, 0.92), rgba(6, 19, 32, 0.94)),
     linear-gradient(120deg, rgba(216, 161, 63, 0.08), transparent 35%);
@@ -201,12 +226,42 @@ a {
   padding: 22px;
   box-shadow: var(--shadow-sm);
   transform: translateY(0);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.3s ease-out,
+    box-shadow 0.3s ease-out,
+    border-color 0.3s ease-out;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: -1px -1px auto;
+  height: 42%;
+  background: linear-gradient(120deg, rgba(244, 205, 121, 0.12), rgba(157, 208, 255, 0));
+  pointer-events: none;
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 24px 34px -26px rgba(18, 29, 40, 0.45);
+  transform: translateY(-8px);
+  border-color: #00d4ff;
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.2),
+    0 0 15px rgba(0, 212, 255, 0.5);
+}
+
+.feature-card {
+  transition:
+    transform 0.3s ease-out,
+    box-shadow 0.3s ease-out,
+    border-color 0.3s ease-out;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  border-color: #00d4ff;
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.2),
+    0 0 15px rgba(0, 212, 255, 0.5);
 }
 
 .card h2 {
@@ -229,15 +284,23 @@ a {
   font-size: 0.9rem;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  background: linear-gradient(90deg, #1a314b, #244764);
+  background:
+    linear-gradient(100deg, rgba(244, 205, 121, 0.18), rgba(244, 205, 121, 0)),
+    linear-gradient(90deg, #1a314b, #244764);
   color: #fff;
   padding: 11px 14px;
   border-radius: 10px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid rgba(161, 185, 206, 0.16);
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .btn:hover {
-  transform: translateY(-2px);
+  background:
+    linear-gradient(100deg, rgba(255, 223, 157, 0.24), rgba(255, 223, 157, 0)),
+    linear-gradient(90deg, #284a69, #316087);
+  transform: translateY(-2px) scale(1.05);
+  border-color: rgba(214, 165, 75, 0.38);
   box-shadow: 0 18px 22px -18px rgba(16, 42, 66, 0.85);
 }
 
@@ -908,7 +971,8 @@ footer .container {
   margin-top: 18px;
   padding: 24px;
   border-radius: 26px;
-  border: 0;
+  border: 1px solid rgba(132, 156, 178, 0.14);
+  box-shadow: 0 24px 44px -36px rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   overflow: hidden;
@@ -962,7 +1026,9 @@ footer .container {
 .home-page .links a:hover,
 .home-page .links a.active {
   border-color: rgba(166, 189, 211, 0.18);
-  background: rgba(255, 255, 255, 0.06);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03)),
+    rgba(255, 255, 255, 0.06);
   box-shadow: none;
 }
 
@@ -978,6 +1044,7 @@ footer .container {
   border-radius: 0;
   border: 0;
   box-shadow: 0 30px 68px -40px rgba(0, 0, 0, 0.75);
+  isolation: isolate;
 }
 
 .home-hero-banner::before {
@@ -991,10 +1058,27 @@ footer .container {
   transform: scale(1.03);
 }
 
+.home-hero-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 8%, rgba(244, 205, 121, 0.14), transparent 36%),
+    linear-gradient(90deg, rgba(3, 12, 22, 0.44) 0%, rgba(3, 12, 22, 0) 16%, rgba(3, 12, 22, 0) 84%, rgba(3, 12, 22, 0.44) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
 .hero-overlay-content {
   position: relative;
   z-index: 1;
   width: min(900px, 92%);
+  padding: clamp(18px, 2vw, 24px);
+  border: 1px solid rgba(162, 187, 209, 0.18);
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(3, 14, 25, 0.44), rgba(3, 14, 25, 0.24));
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   animation: heroFadeIn 0.85s ease both;
 }
 
@@ -1069,12 +1153,14 @@ footer .container {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   font-size: 0.9rem;
-  transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .ghost-btn:hover {
-  transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.09);
+  transform: translateY(-2px) scale(1.05);
+  border-color: rgba(244, 205, 121, 0.42);
+  background: rgba(255, 255, 255, 0.14);
   box-shadow: 0 14px 24px -18px rgba(0, 0, 0, 0.8);
 }
 
@@ -1258,7 +1344,8 @@ footer .container {
   margin: 10px 0 18px;
   padding: 34px 20px;
   background:
-    linear-gradient(180deg, rgba(8, 21, 36, 0.78), rgba(2, 9, 16, 0.9)),
+    linear-gradient(180deg, rgba(8, 21, 36, 0.7), rgba(2, 9, 16, 0.9)),
+    radial-gradient(circle at 50% -10%, rgba(244, 205, 121, 0.12), transparent 30%),
     #01050b;
   border-top: 1px solid rgba(96, 132, 170, 0.16);
   border-bottom: 1px solid rgba(96, 132, 170, 0.14);
@@ -1282,6 +1369,11 @@ footer .container {
   padding: 16px 12px;
   display: grid;
   justify-items: center;
+  transition: transform 0.22s ease;
+}
+
+.impact-item:hover {
+  transform: translateY(-2px);
 }
 
 .impact-item + .impact-item {
@@ -1320,9 +1412,11 @@ footer .container {
 }
 
 .home-system-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(165, 188, 210, 0.28);
-  box-shadow: 0 24px 36px -26px rgba(0, 0, 0, 0.7);
+  transform: translateY(-8px);
+  border-color: #00d4ff;
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.2),
+    0 0 15px rgba(0, 212, 255, 0.5);
 }
 
 .home-system-card h2 {
@@ -1449,6 +1543,7 @@ footer .container {
   border-radius: 16px;
   border: 1px solid rgba(122, 148, 172, 0.16);
   background: linear-gradient(180deg, rgba(9, 25, 40, 0.58), rgba(5, 17, 29, 0.56));
+  box-shadow: 0 16px 26px -24px rgba(0, 0, 0, 0.85);
 }
 
 .about-card h3,
@@ -1499,6 +1594,12 @@ footer .container {
   margin: 0 auto 14px;
   display: block;
   box-shadow: 0 18px 26px -20px rgba(0, 0, 0, 0.82);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.team-card:hover .team-photo {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 30px -18px rgba(0, 0, 0, 0.72);
 }
 
 .contact-grid {
@@ -1544,6 +1645,25 @@ footer .container {
   color: #eaf2f8;
   padding: 11px 12px;
   font: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.submit-form input:hover,
+.submit-form select:hover,
+.submit-form textarea:hover {
+  border-color: rgba(175, 199, 220, 0.34);
+}
+
+.submit-form input:focus,
+.submit-form select:focus,
+.submit-form textarea:focus {
+  border-color: rgba(157, 208, 255, 0.75);
+  box-shadow: 0 0 0 3px rgba(157, 208, 255, 0.2);
+  background: rgba(6, 20, 34, 0.92);
+}
+
+.submit-form ::placeholder {
+  color: rgba(205, 219, 231, 0.65);
 }
 
 .submit-form textarea {
@@ -1678,6 +1798,17 @@ footer a {
 
 footer a:hover {
   color: #f3c873;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 .home-page footer {
